@@ -7,7 +7,11 @@ const app = express();
 
 app.use(helmet());
 app.use(cors({
-  origin: process.env.FRONTEND_URL,
+  origin: [
+    'http://localhost:5173',
+    'https://sistem-keuangan-harian.netlify.app',
+    'https://dailyexpense-frontend.vercel.app'
+  ],
   credentials: true
 }));
 app.use(express.json());
